@@ -28,8 +28,8 @@ export default function ArticlePage({ article }) {
   return (
     <div className="w-4/6 m-auto shadow-xl text-gray-800 bg-white">
       <div className="w-full bg-blue-500 text-white px-4 py-1">
-        <Link href="/" passHref>
-          <a>Back to homepage</a>
+        <Link   href="/" passHref>
+          Back to homepage 
         </Link>
       </div>
       <div className="relative w-full h-80">

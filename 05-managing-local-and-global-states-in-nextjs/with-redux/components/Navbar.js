@@ -16,12 +16,12 @@ function Navbar() {
       <div className="w-9/12 m-auto flex justify-between">
         <div className="font-bold">
           <Link href="/" passHref>
-            <a> My e-commerce </a>
+             My e-commerce 
           </Link>
         </div>
         <div className="font-bold underline">
           <Link href="/cart" passHref>
-            <a>{totalItemsAmount} items in cart</a>
+            {totalItemsAmount}items in cart
           </Link>
         </div>
       </div>

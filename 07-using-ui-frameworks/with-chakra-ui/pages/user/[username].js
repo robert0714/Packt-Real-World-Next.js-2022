@@ -67,7 +67,7 @@ function UserPage({ user }) {
           padding="8"
           backgroundColor={useColorModeValue('white', 'gray.700')}>
           <Text as="p">{user.description}</Text>
-          <Link href="/" passHref>
+          <Link href="/" passHref legacyBehavior>
             <Button marginTop="8" colorScheme="whatsapp" as="a">
               Back to all users
             </Button>

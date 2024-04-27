@@ -5,8 +5,7 @@ import { extractArticleIdFromSlug } from '../../utils';
 export async function getServerSideProps({ params }) {
   const articleID = extractArticleIdFromSlug(params.slug);
   const articleReq = await fetch(`http://localhost:3000/api/article?id=${articleID}`);
-  const article = await articleReq.json();
-
+  const article = await articleReq.json();  
   if (articleReq.status === 404) {
     return {
       redirect: {
@@ -29,11 +28,11 @@ export default function ArticlePage({ article }) {
     <div className="w-4/6 m-auto shadow-xl text-gray-800 bg-white">
       <div className="w-full bg-blue-500 text-white px-4 py-1">
         <Link href="/" passHref>
-          <a>Back to homepage</a>
+          Back to homepage
         </Link>
       </div>
       <div className="relative w-full h-80">
-        <Image src={article.image.url} alt={article.title} layout="fill" objectFit="cover" />
+        <Image src={article.image.url} alt={article.title} layout="fill" objectFit="cover"   />
         <div className="absolute px-4 py-2 bg-black bg-opacity-60 text-white bottom-2 right-2">
           Image by <span className="font-bold">{article.image.author}</span> on Unsplash
         </div>

@@ -7,7 +7,7 @@ function List({ users }) {
       {users.map((user) => (
         <li key={user.id}>
           <Link href={`/users/${user.username}`} passHref>
-            <a> {user.username} </a>
+             {user.username} 
           </Link>
         </li>
       ))}

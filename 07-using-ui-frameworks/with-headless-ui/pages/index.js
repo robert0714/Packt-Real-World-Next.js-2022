@@ -32,8 +32,8 @@ const MenuEntry = (props) => (
       });
 
       return (
-        <Link href={props.href} passHref>
-          <a className={classNames}>{props.name}</a>
+        <Link href={props.href} passHref className={classNames}>
+          {props.name}
         </Link>
       );
     }}

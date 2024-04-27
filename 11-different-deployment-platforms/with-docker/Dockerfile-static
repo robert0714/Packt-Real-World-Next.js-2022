@@ -1,0 +1,15 @@
+FROM node:21.7.1-alpine3.19  as build-stage
+
+WORKDIR /app
+ADD . ./
+
+RUN npm install && \
+    npm run container 
+
+FROM nginx:1.25.4 as production-stage 
+
+COPY --from=build-stage /app/dist /usr/share/nginx/html
+COPY ./nginx.default /etc/nginx/nginx.conf
+COPY env.sh /docker-entrypoint.d/env.sh
+RUN chmod +x /docker-entrypoint.d/env.sh
+# ENTRYPOINT ["/entrypoint.sh"]

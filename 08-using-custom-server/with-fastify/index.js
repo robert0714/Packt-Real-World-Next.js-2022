@@ -1,6 +1,6 @@
 const fastify = require('fastify')();
 
-fastify.register(require('fastify-nextjs')).after(() => {
+fastify.register(require('@fastify/nextjs')).after(() => {
   fastify.next('/');
   fastify.next('/about');
   fastify.next('/greet/:user');

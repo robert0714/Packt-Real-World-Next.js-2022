@@ -1,0 +1,14 @@
+[
+  {{#repeat 50}}
+  {
+    "id": "{{faker 'string.uuid'}}",
+    "username": "{{faker 'internet.userName'}}",
+    "first_name": "{{faker 'person.firstName'}}",
+    "last_name": "{{faker 'person.lastName'}}",
+    "email": "{{faker 'internet.email'}}",
+    "company": "{{faker 'company.name'}}",
+    "job_title": "{{faker 'person.jobTitle'}}",
+    "profile_picture": "{{faker 'image.url'}}"
+  }
+  {{/repeat}}
+]

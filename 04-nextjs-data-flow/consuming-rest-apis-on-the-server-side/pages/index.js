@@ -1,7 +1,12 @@
 import Link from 'next/link';
 import axios from 'axios';
+import https from 'https'
 
 export async function getServerSideProps() {
+  const httpsAgent = new https.Agent({
+    rejectUnauthorized: false,
+  })
+  axios.defaults.httpsAgent = httpsAgent
   const { data } = await axios.get(`${process.env.API_ENDPOINT}/04/users`);
 
   return {
@@ -17,7 +22,7 @@ function HomePage({ users }) {
       {users.map((user) => (
         <li key={user.id}>
           <Link href={`/users/${user.username}`} passHref>
-            <a> {user.username} </a>
+             {user.username} 
           </Link>
         </li>
       ))}
